@@ -18,20 +18,20 @@ import colors from '../../../../constants/colors';
 
 import img from '../../../../assets/images/scrrenLogin.jpg';
 export default class components extends React.Component {
-  render = () => {
+  render = (navigation) => {
     return (
       <React.Fragment>
         <ImageBackground source={img} style={styles.container} >
           <View style={styles.formContainer}>
             <Animatable.View duration={200} animation="fadeInUp">
               <View style={styles.formInput}>
-                {/* <Icon
+                <Icon
                   size={icons.size}
                   color={icons.color}
                   name={icons.form.username.name}
                   type={icons.form.username.type}
                   containerStyle={styles.formInputIcon}
-                /> */}
+                />
                 <TextInput
                   autoCapitalize="none"
                   keyboardType="email-address"
@@ -44,13 +44,13 @@ export default class components extends React.Component {
 
             <Animatable.View duration={200} animation="fadeInUp">
               <View style={styles.formInput}>
-                {/* <Icon
+                <Icon
                   size={icons.size}
                   color={icons.color}
-                  name={icons.form.username.name}
-                  type={icons.form.username.type}
+                  name={icons.form.password.name}
+                  type={icons.form.password.type}
                   containerStyle={styles.formInputIcon}
-                /> */}
+                />
                 <TextInput
                   autoCapitalize="none"
                   // secureTextEntry={secureTextEntry}
@@ -64,8 +64,8 @@ export default class components extends React.Component {
             <Animatable.View animation="fadeInUp">
               <Button
                 icon={<Icon type="simple-line-icon" name="key" size={icons.size} color="white" iconStyle={{ marginRight: 8 }} />}
-                // title={text.login.toUpperCase()}
-                // onPress={this.onLogin}
+                title={text.login.toUpperCase()}
+                onPress={() => navigation.navigate('AppStackNavigator')}
                 buttonStyle={styles.formSubmitLogin}
                 titleStyle={styles.formSubmitText}
               />

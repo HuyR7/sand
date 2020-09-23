@@ -12,14 +12,14 @@ const common = StyleSheet.create({
   },
   formContainer: {
     height: 300,
-    width: 250,
+    width: 300,
     borderRadius: 10,
     alignSelf: 'center',
     justifyContent: 'center',
     backgroundColor: 'white',
   },
   formInput: {
-    width: 200,
+    width: 250,
     height: HEIGHT_INPUT,
     flexDirection: 'row',
     alignItems: 'center',
@@ -36,7 +36,7 @@ const common = StyleSheet.create({
   },
   formSubmitLogin: {
     height: 40,
-    width: 170,
+    width: 200,
     marginTop: 15,
     borderRadius: 20,
     marginBottom: 12,
