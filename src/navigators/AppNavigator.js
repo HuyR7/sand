@@ -12,8 +12,8 @@ const AppNavigator = () => {
   return (
     <React.Fragment>
       <NavigationContainer>
-        <AuthStackNavigator />
-        {/* <AppStackNavigator /> */}
+        {/* <AuthStackNavigator /> */}
+        <AppStackNavigator />
       </NavigationContainer>
     </React.Fragment>
   );

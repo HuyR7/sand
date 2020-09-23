@@ -7,6 +7,9 @@ import CustomBottomTabBar from '../../components/CustomBottomTabBar';
 
 import HomeTab from './HomeTab/HomeScreen';
 import SettingTab from './SettingTab/index';
+import Card from './Card/index';
+import Bag from './Bag/index';
+import Oder from './Oder/index';
 import Colors from '../../constants/colors';
 
 const Tab = createMaterialTopTabNavigator();
@@ -14,24 +17,39 @@ const Tab = createMaterialTopTabNavigator();
 const screenOptions = {
   Navigator: {},
   HomeTab: {
-    title: 'Trang chủ',
+    // title: 'Trang chủ',
     // eslint-disable-next-line react/prop-types
     tabBarIcon: ({color, size}) => (
-      <EIcon type="font-awesome" name="home" color={color} size={size} />
+      <EIcon type="material-community" name="house-variant-outline" color={color} size={size} />
     ),
   },
-  // NewsTab: {
-  //   title: 'Bản tin',
-  //   // eslint-disable-next-line react/prop-types
-  //   tabBarIcon: ({color, size}) => (
-  //     <EIcon type="font-awesome" name="pie-chart" color={color} size={size} />
-  //   ),
-  // },
-  SettingTab: {
-    title: 'Thiết lập',
+  Card: {
+    // title: 'Trang chủ',
     // eslint-disable-next-line react/prop-types
     tabBarIcon: ({color, size}) => (
-      <EIcon type="material-community" name="apps" color={color} size={size} />
+      <EIcon type="material-community" name="house-variant-outline" color={color} size={size} />
+    ),
+  },
+  Bag: {
+    // title: 'Trang chủ',
+    // eslint-disable-next-line react/prop-types
+    tabBarIcon: ({color, size}) => (
+      <EIcon type="material-community" name="backpack-outline" color={color} size={size} />
+    ),
+  },
+  Oder: {
+    // title: 'Trang chủ',
+    // eslint-disable-next-line react/prop-types
+    tabBarIcon: ({color, size}) => (
+      <EIcon type="material-community" name="Note-Text-Outline" color={color} size={size} />
+    ),
+  },
+
+  SettingTab: {
+    // title: 'Thiết lập',
+    // eslint-disable-next-line react/prop-types
+    tabBarIcon: ({color, size}) => (
+      <EIcon type="material-community" name="user-outline" color={color} size={size} />
     ),
   },
 };
