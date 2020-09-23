@@ -1,5 +1,5 @@
 import React from 'react';
-import { createNativeStackNavigator } from 'react-native-screens/stack';
+import {createNativeStackNavigator} from 'react-native-screens/native-stack';
 
 import TabNavigator from '../TabStackNavigator';
 
@@ -24,7 +24,7 @@ const screenOptions = {
       backgroundColor: Colors.PRIMARY,
     },
   },
-  TabNavigator: { headerShown: false },
+  TabNavigator: {headerShown: false},
 };
 
 export default () => {
