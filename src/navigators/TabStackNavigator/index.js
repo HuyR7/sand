@@ -6,10 +6,10 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import CustomBottomTabBar from '../../components/CustomBottomTabBar';
 
 import HomeTab from './HomeTab/HomeScreen';
-import SettingTab from './SettingTab/index';
-import Card from './Card/index';
-import Bag from './Bag/index';
-import Oder from './Oder/index';
+import SettingTab from './SettingTab';
+import Card from './Card';
+import Bag from './Bag';
+import Oder from './Oder';
 import Colors from '../../constants/colors';
 
 const Tab = createMaterialTopTabNavigator();
@@ -30,13 +30,13 @@ const screenOptions = {
       <EIcon type="material-community" name="house-variant-outline" color={color} size={size} />
     ),
   },
-  Bag: {
-    // title: 'Trang chủ',
-    // eslint-disable-next-line react/prop-types
-    tabBarIcon: ({color, size}) => (
-      <EIcon type="material-community" name="backpack-outline" color={color} size={size} />
-    ),
-  },
+  // Bag: {
+  //   // title: 'Trang chủ',
+  //   // eslint-disable-next-line react/prop-types
+  //   tabBarIcon: ({color, size}) => (
+  //     <EIcon type="material-community" name="backpack-outline" color={color} size={size} />
+  //   ),
+  // },
   Oder: {
     // title: 'Trang chủ',
     // eslint-disable-next-line react/prop-types
@@ -91,6 +91,16 @@ const TabNavigator = () => {
       <Tab.Screen
         name="HomeTab"
         component={HomeTab}
+        options={screenOptions.HomeTab}
+      />
+      <Tab.Screen
+        name="Card"
+        component={Card}
+        options={screenOptions.HomeTab}
+      />
+      <Tab.Screen
+        name="Oder"
+        component={Oder}
         options={screenOptions.HomeTab}
       />
       <Tab.Screen
