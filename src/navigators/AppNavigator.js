@@ -1,8 +1,10 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import AuthStackNavigator from './AuthStackNavigator';
 import AppStackNavigator from './AppStackNavigator';
+import TabNavigator from './TabStackNavigator';
 
 // Components
 
@@ -10,12 +12,13 @@ import AppStackNavigator from './AppStackNavigator';
 
 const AppNavigator = () => {
   return (
-    <React.Fragment>
+    <SafeAreaProvider>
       <NavigationContainer>
         {/* <AuthStackNavigator /> */}
         <AppStackNavigator />
+        {/* <TabNavigator /> */}
       </NavigationContainer>
-    </React.Fragment>
+    </SafeAreaProvider>
   );
 };
 

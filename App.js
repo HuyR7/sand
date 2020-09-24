@@ -4,11 +4,7 @@ import AppNavigator from './src/navigators/AppNavigator';
 // Variables
 
 const App = () => {
-  return (
-    <React.Fragment>
-      <AppNavigator />
-    </React.Fragment>
-  );
+  return <AppNavigator />;
 };
 
 export default App;

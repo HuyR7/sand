@@ -1,114 +1,58 @@
 import React from 'react';
-import {Platform, StatusBar} from 'react-native';
-import {Icon as EIcon} from 'react-native-elements';
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import { Icon as EIcon } from 'react-native-elements';
+import AnimatedTabBar from 'curved-bottom-navigation-bar';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import CustomBottomTabBar from '../../components/CustomBottomTabBar';
-
-import HomeTab from './HomeTab/HomeScreen';
-import SettingTab from './SettingTab';
 import Card from './Card';
-import Bag from './Bag';
-import Oder from './Oder';
-import Colors from '../../constants/colors';
+import Order from './Order';
+import Setting from './SettingTab';
+import Home from './HomeTab/HomeScreen';
 
-const Tab = createMaterialTopTabNavigator();
+const Tab = createBottomTabNavigator();
 
-const screenOptions = {
-  Navigator: {},
-  HomeTab: {
-    // title: 'Trang chủ',
-    // eslint-disable-next-line react/prop-types
-    tabBarIcon: ({color, size}) => (
-      <EIcon type="material-community" name="house-variant-outline" color={color} size={size} />
-    ),
-  },
-  Card: {
-    // title: 'Trang chủ',
-    // eslint-disable-next-line react/prop-types
-    tabBarIcon: ({color, size}) => (
-      <EIcon type="material-community" name="house-variant-outline" color={color} size={size} />
-    ),
-  },
-  // Bag: {
-  //   // title: 'Trang chủ',
-  //   // eslint-disable-next-line react/prop-types
-  //   tabBarIcon: ({color, size}) => (
-  //     <EIcon type="material-community" name="backpack-outline" color={color} size={size} />
-  //   ),
-  // },
-  Oder: {
-    // title: 'Trang chủ',
-    // eslint-disable-next-line react/prop-types
-    tabBarIcon: ({color, size}) => (
-      <EIcon type="material-community" name="Note-Text-Outline" color={color} size={size} />
-    ),
-  },
+export default function App() {
+  const tabs = React.useMemo(() => ({
+    Home: {
+      // eslint-disable-next-line react/prop-types
+      icon: ({ progress }) => <EIcon type="material-community" name="home-variant-outline" color="red" size={24} />,
+    },
 
-  SettingTab: {
-    // title: 'Thiết lập',
-    // eslint-disable-next-line react/prop-types
-    tabBarIcon: ({color, size}) => (
-      <EIcon type="material-community" name="user-outline" color={color} size={size} />
-    ),
-  },
-};
+    Card: {
+      // eslint-disable-next-line react/prop-types
+      icon: ({ progress }) => <EIcon type="material-community" name="cart-minus" color="red" size={24} />,
+    },
+    Order: {
+      // eslint-disable-next-line react/prop-types
+      icon: ({ progress }) => <EIcon type="material-community" name="calendar-text" color="red" size={24} />,
+    },
+    Setting: {
+      // eslint-disable-next-line react/prop-types
+      icon: ({ progress }) => <EIcon type="font-awesome" name="user" color="red" size={24} />,
+    },
+  }), []);
 
-const tabBarOptions = {
-  showIcon: true,
-  activeTintColor: Colors.PRIMARY,
-  inactiveTintColor: Colors.PRIMARY,
-  tabStyle: {
-    padding: 5,
-  },
-  labelStyle: {
-    textTransform: 'none',
-  },
-  iconStyle: {
-    width: '100%',
-  },
-  indicatorStyle: {
-    top: 0,
-    backgroundColor: Colors.PRIMARY,
-  },
-};
-
-const tabBar = (props) => <CustomBottomTabBar {...props} />;
-
-const TabNavigator = () => {
-  React.useEffect(() => {
-    if (Platform.OS === 'ios') {
-      StatusBar.setBarStyle('light-content', true);
-    }
+  const tabBar = React.useCallback((props) => {
+    return <AnimatedTabBar tabs={tabs} {...props} />;
   }, []);
+
   return (
-    <Tab.Navigator
-      tabBar={tabBar}
-      swipeEnabled={false}
-      tabBarPosition="bottom"
-      tabBarOptions={tabBarOptions}
-      screenOptions={screenOptions.Navigator}>
+    <Tab.Navigator tabBar={tabBar}>
       <Tab.Screen
-        name="HomeTab"
-        component={HomeTab}
-        options={screenOptions.HomeTab}
+        name="Home"
+        component={Home}
       />
       <Tab.Screen
         name="Card"
         component={Card}
-        options={screenOptions.HomeTab}
       />
       <Tab.Screen
-        name="Oder"
-        component={Oder}
-        options={screenOptions.HomeTab}
+        name="Order"
+        component={Order}
       />
       <Tab.Screen
-        name="SettingTab"
-        component={SettingTab}
-        options={screenOptions.SettingTab}
+        name="Setting"
+        component={Setting}
       />
     </Tab.Navigator>
-  );
-};
-export default TabNavigator;
+  )
+}

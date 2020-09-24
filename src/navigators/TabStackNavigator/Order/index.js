@@ -6,11 +6,11 @@ import { View, Text } from 'react-native';
 // Variables
 // import styles from './styles';
 
-export default class Oder extends React.Component {
+export default class Order extends React.Component {
     render = () => {
         return (
             <View>
-                <Text>Oder</Text>
+                <Text>Order</Text>
             </View>
         );
     }
