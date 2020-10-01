@@ -4,9 +4,9 @@ import AnimatedTabBar from 'curved-bottom-navigation-bar';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Card from './Card';
-import Order from './Order';
+import Search from './Search';
 import Setting from './SettingTab';
-import Home from './HomeTab/HomeScreen';
+import Home from './HomeTab';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,13 +17,13 @@ export default function App() {
       icon: ({ progress }) => <EIcon type="material-community" name="home-variant-outline" color="red" size={24} />,
     },
 
+    Search: {
+      // eslint-disable-next-line react/prop-types
+      icon: ({ progress }) => <EIcon type="material-community" name="magnify" color="red" size={24} />,
+    },
     Card: {
       // eslint-disable-next-line react/prop-types
-      icon: ({ progress }) => <EIcon type="material-community" name="cart-minus" color="red" size={24} />,
-    },
-    Order: {
-      // eslint-disable-next-line react/prop-types
-      icon: ({ progress }) => <EIcon type="material-community" name="calendar-text" color="red" size={24} />,
+      icon: ({ progress }) => <EIcon type="material-community" name="heart" color="red" size={24} />,
     },
     Setting: {
       // eslint-disable-next-line react/prop-types
@@ -42,12 +42,12 @@ export default function App() {
         component={Home}
       />
       <Tab.Screen
-        name="Card"
-        component={Card}
+        name="Search"
+        component={Search}
       />
       <Tab.Screen
-        name="Order"
-        component={Order}
+        name="Card"
+        component={Card}
       />
       <Tab.Screen
         name="Setting"

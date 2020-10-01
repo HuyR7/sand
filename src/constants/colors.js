@@ -1,13 +1,9 @@
 export default {
-  GRAY: '#86939e',
-  WHITE: '#ffffff',
-  BLUE: '#022F63',
-  PRIMARY: '#00cec9',
   RED: '#d63031',
-
-  LIGHTGRAY: '#f1f2f6',
-  TAB_ACTIVE: '#005bb7',
-  WHITE_SMOKE: '#BEBEBE',
+  GRAY: '#dfe6e9',
+  BLUE: '#022F63',
+  WHITE: '#ffffff',
+  PRIMARY: '#00cec9',
   YELLOW_STAR: '#f0da55',
   LIGHT_YELLOW: '#F1C40F',
 
